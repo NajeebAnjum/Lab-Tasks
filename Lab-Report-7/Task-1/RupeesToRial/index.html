@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" name="form">
+        <label for="#">Enter Amount in Rupees</label>
+        <input type="text" name="data1">
+
+        <button onclick="PKRToRial()">Convert</button>
+
+        <script>
+            function PKRToRial()
+            {
+                var Rupees = document.form.data1.value;
+                var Rial = Rupees / 75;
+
+                alert("Amount in Rial is  = " + Rial);
+            }
+        </script>
+    </form>
+</body>
+</html>

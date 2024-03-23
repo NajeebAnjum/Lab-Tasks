@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="tableContainer"></p>
+    <script>
+        var srno = [1, 2, 3, 4];
+        var items = ["Jalebi", "Samosa", "Pakora", "Gulabjamun"];
+        var rates = [370, 20, 400, 800];
+        var quantities = [2, 12, 1, 1];
+        var costs = [];
+
+        for (var i = 0; i < rates.length; i++) {
+            costs[i] = rates[i] * quantities[i];
+        }
+
+        var tableHTML = "<table border='1'>";
+
+        tableHTML += "<tr><th>SRNO</th><th>Item</th><th>Rate</th><th>Qty</th><th>Cost</th></tr>";
+
+        for (var i = 0; i < srno.length; i++) {
+            tableHTML += "<tr>";
+            tableHTML += "<td>";
+            tableHTML += srno[i];
+            tableHTML += "</td>";
+            tableHTML += "<td>";
+            tableHTML += items[i];
+            tableHTML += "</td>";
+            tableHTML += "<td>";
+            tableHTML += rates[i];
+            tableHTML += "</td>";
+            tableHTML += "<td>";
+            tableHTML += quantities[i];
+            tableHTML += "</td>";
+            tableHTML += "<td>";
+            tableHTML += costs[i];
+            tableHTML += "</td>";
+            tableHTML += "</tr>";
+        }
+
+        tableHTML += "</table>";
+
+        document.getElementById('tableContainer').innerHTML = tableHTML;
+
+    </script>
+</body>
+
+</html>

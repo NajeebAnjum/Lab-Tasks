@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .form{
+            border: 2px solid gray;
+            width: 400px;
+            height: 400px;
+            background-color: aquamarine;
+            text-align: center;
+        }
+        .heading{
+            text-align: center;
+        }
+        h1{
+            margin-top: 130px;
+            margin-bottom: 20px;
+        }
+        .form input{
+            height: 20px;
+        }
+    </style> -->
+</head>
+
+<body>
+    <form action="#" class="form">
+        <label for="#">Email</label>
+        <input type="text" placeholder="email" class="email" name="email">
+
+        <label for="#">Password</label>
+        <input type="password" placeholder="password" class="password" name="password">
+
+        <button onclick="Validation()">Submit</button>
+    </form>
+
+
+
+    <script>
+        // alert('Welcome');
+        // document.write("Helloe");
+        // console.log("Hello");
+
+        function Validation() {
+            var d1 = document.form.email.value;
+            var d2 = document.form.password.value;
+            const email = "najeeb";
+            const password = 1234;
+
+            if (d1 == email && d2 == password) {
+                alert("Login Success");
+            }
+            else {
+                alert("Wrong Email or Password");
+            }
+
+        }
+    </script>
+
+    
+    <!-- <form action="#" class="form">
+            <h1>Admission form</h1>
+        <label for="userName">UserName : </label>
+        <input type="text" name="userName" class="name">
+        <br>
+        <br>
+        <label for="password">Password : </label>
+        <input type="password" name="password" class="password">
+        <button>Submit</button>
+    </form> -->
+
+
+</body>
+
+</html>
