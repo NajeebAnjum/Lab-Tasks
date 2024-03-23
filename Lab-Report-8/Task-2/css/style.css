@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    /* overflow: hidden; */
+    background-color: rgb(115, 221, 182);
+}
+#navbar{
+    /* position: fixed; */
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(236, 236, 236);
+    padding: 0px 20px;
+    box-shadow: 3px 3px 15px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+.first{
+    display: flex;
+    list-style: none;
+    height: 50px;
+    margin-top: 15px;
+}
+.first li a{
+    font-weight: bold;
+    padding: 25px;
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+}
+.first li a:hover{
+    color: rgb(115, 221, 182);
+}
+#navbar .fa-shopping-cart{
+    font-size: 30px;
+}
+#navbar .fa-shopping-cart:hover{
+    color: rgb(115, 221, 182);
+}
+.option{
+    display: flex;
+    margin-bottom: 0;
+}
+.cancel{
+    background-color: blue;
+    width: 50%;
+}
+.buy{
+    width: 50%;
+    background-color: green;
+}
+/* ... (your existing CSS code) ... */
+
+#navbar .shopping-cart {
+    position: absolute;
+    top: 11%;
+    right: -30%;
+    transition: 1s;
+    width: 400px;
+    height: 450px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 3px 3px 15px 3px rgba(0, 0, 0, 0.5);
+}
+
+#cart-content {
+    text-align: left; /* Align the content to the left */
+    padding: 10px;
+}
+
+#cart_item li {
+    margin: 10px 0;
+}
+
+/* ... (your existing CSS code) ... */
+
+#cartArea h3{
+    padding: 10px;
+    background-color: rgb(115, 221, 182);
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 0 15px;
+}
+.product{
+    width: 300px;
+    height: 350px;
+    background-color: rgb(236, 236, 236);
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 5px;
+    margin: 15px;
+}
+.product img{
+    width: 150px;
+    margin-bottom: 25px;
+}
+.product h3{
+    margin-bottom: 10px;
+}
+.product p{
+    /* height: 60px; */
+    margin-bottom: 20px;
+}
+.product h4{
+    margin-bottom: 50px;
+}

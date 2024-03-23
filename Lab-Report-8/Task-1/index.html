@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 290px;
+            height: 80vh;
+            margin: auto;
+        }
+
+        .output {
+            display: flex;
+        }
+
+        .output {
+            width: 100%;
+            height: 10vh;
+            border: 1px solid gray;
+            overflow: hidden;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .box {
+            font-size: large;
+            width: 73px;
+            height: 70px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+        .box:hover{
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="output" id="output"></div>
+        <div class="row">
+            <div><input type="button" value="C" class="box" onclick="clearDisplay()"></div>
+            <div><input type="button" value="/" class="box" onclick="append('/')"></div>
+            <div><input type="button" value="*" class="box" onclick="append('*')"></div>
+            <div><input type="button" value="<-" class="box" onclick="deleteLastChar()"></div>
+        </div>
+        <div class="row">
+            <div><input type="button" value="7" class="box" onclick="append('7')"></div>
+            <div><input type="button" value="8" class="box" onclick="append('8')"></div>
+            <div><input type="button" value="9" class="box" onclick="append('9')"></div>
+            <div><input type="button" value="-" class="box" onclick="append('-')"></div>
+        </div>
+        <div class="row">
+            <div><input type="button" value="4" class="box" onclick="append('4')"></div>
+            <div><input type="button" value="5" class="box" onclick="append('5')"></div>
+            <div><input type="button" value="6" class="box" onclick="append('6')"></div>
+            <div><input type="button" value="+" class="box" onclick="append('+')"></div>
+        </div>
+        <div class="row">
+            <div><input type="button" value="1" class="box" onclick="append('1')"></div>
+            <div><input type="button" value="2" class="box" onclick="append('2')"></div>
+            <div><input type="button" value="3" class="box" onclick="append('3')"></div>
+            <div><input type="button" value="." class="box" onclick="append('.')"></div>
+        </div>
+        <div class="row">
+            <div><input type="button" value="(" class="box" onclick="append('(')"></div>
+            <div><input type="button" value="0" class="box" onclick="append('0')"></div>
+            <div><input type="button" value=")" class="box" onclick="append(')' )"></div>
+            <div><input type="button" value="=" class="box" onclick="Result()"></div>
+        </div>
+    </div>
+
+
+    <script>
+
+        function clearDisplay() {
+            document.getElementById("output").innerHTML = "0";
+        }
+
+        function append(value) {
+            let display = document.getElementById("output");
+            if (display.innerHTML == "") {
+                display.innerHTML = value;
+            } else {
+                display.innerHTML += value;
+            }
+        }
+
+        function deleteLastChar() {
+            let display = document.getElementById("output");
+            let currentDisplay = display.innerHTML;
+            display.innerHTML = currentDisplay.substring(0, currentDisplay.length - 1);
+            if (display.innerHTML == "") {
+                display.innerHTML = "0";
+            }
+        }
+
+        function Result() {
+            let display = document.getElementById("output");
+            try {
+                display.innerHTML = eval(display.innerHTML);
+            } catch (error) {
+                display.innerHTML = "Error";
+            }
+        }
+    </script>
+</body>
+
+</html>
