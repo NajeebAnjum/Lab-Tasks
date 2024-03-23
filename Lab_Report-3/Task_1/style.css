@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("back.jpg");
+    background-position: center;
+    background-size: cover;
+    font-family: sans-serif;
+}
+.login_container{
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #f7fcff9c;
+    /* border: 1px solid rgb(240, 235, 235); */
+    box-shadow: 3px 3px 5px 5px #77777713;
+    padding: 20px;
+}
+input{
+    width: 100%;
+    height: 25px;
+    /* margin: 10px; */
+    border: 1px solid #dfdfe2;
+    box-shadow: #F8FCFF;
+    border-radius: 5px;
+    
+}
+/* .input{
+    margin-left: 10px;
+} */
+.signin{
+    background-color: #0066CB;
+    color: white;
+    height: 30px;
+    width: 100%;
+}
+.signin_google{
+    background-color: #000000;
+    color: white;
+    height: 30px;
+    width: 100%;
+}
+.or{
+    text-align: center;
+}
+.forgot{
+    text-align:end;
+    margin-top: 20px;
+    color: #0066CB;
+}
