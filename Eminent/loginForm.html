@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/eminentstyle.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Login</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="images/eminent-enterpirses-logo.png" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="Index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ourMission.html">Our Mission</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ourMission.html">Service Sectors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact-us">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="loginForm.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="myform mb-5">
+    <div class="container mt-5">
+      <h1 class="text-center">Please Fill The Form</h1>
+      <form class="myform" id="myform-link">
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
+          <div class="col">
+            <div data-mdb-input-init class="form-outline">
+              <label class="form-label mt-4" for="form3Example1">First name</label>
+              <input type="text" id="form3Example1" class="form-control" />
+            </div>
+          </div>
+          <div class="col">
+            <div data-mdb-input-init class="form-outline">
+              <label class="form-label mt-4" for="form3Example2">Last name</label>
+              <input type="text" id="form3Example2" class="form-control" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Email input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">Email address</label>
+          <input type="email" id="form3Example3" class="form-control" />
+        </div>
+
+        <!-- Password input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example4">Password</label>
+          <input type="password" id="form3Example4" class="form-control" />
+        </div>
+
+        <!-- Submit button -->
+        <div>
+          <button class="btn mb-4" id="loginButton">
+            <a href="#">Login</a>
+          </button>
+          <button class="btn mb-4" id="signupButton">
+            <a href="#">Sign up</a>
+          </button>
+        </div>
+      </form>
+      <script>
+        $(document).ready(function () {
+          $("#loginButton, #signupButton").click(function (e) {
+            e.preventDefault(); // Prevent default button action
+            var isValid = true;
+            $(".error").remove();
+
+            // Check first name
+            if ($("#form3Example1").val().trim() === "") {
+              isValid = false;
+              $("#form3Example1").after(
+                '<span class="error text-danger">Please enter first name</span>'
+              );
+            }
+
+            // Check last name
+            if ($("#form3Example2").val().trim() === "") {
+              isValid = false;
+              $("#form3Example2").after(
+                '<span class="error text-danger ">Please enter the last name</span>'
+              );
+            }
+
+            // Check email
+            if ($("#form3Example3").val().trim() === "") {
+              isValid = false;
+              $("#form3Example3").after(
+                '<span class="error text-danger">Please enter email address</span>'
+              );
+            } else {
+              var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+              if (!emailReg.test($("#form3Example3").val())) {
+                isValid = false;
+                $("#form3Example3").after(
+                  '<span class="error text-danger">Enter a valid email address</span>'
+                );
+              }
+            }
+
+            // Check password
+            if ($("#form3Example4").val().trim() === "") {
+              isValid = false;
+              $("#form3Example4").after(
+                '<span class="error text-danger">Please enter the Password</span>'
+              );
+            }
+
+            if (!isValid) {
+              e.preventDefault();
+            }
+          });
+        });
+      </script>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-white footer" id="contact-us">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-between p-4 social-links">
+      <div class="me-5">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <div class="product-links">
+        <a href="" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="product-link">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold">Eminent Enterpirses</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" />
+            <h4>Dr. Ahmad Usman</h4>
+            <h6>B. Pharm</h6>
+            <h6>Ms(Health info)</h6>
+            <h5>Director</h5>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 product-link">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Products</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" />
+            <p>
+              <a href="#">Capsule</a>
+            </p>
+            <p>
+              <a href="#">Solution</a>
+            </p>
+            <p>
+              <a href="#">syrup</a>
+            </p>
+            <p>
+              <a href="#">Lotion</a>
+            </p>
+          </div>
+
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 product-link">
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" />
+            <p>
+              <a href="#">Your Account</a>
+            </p>
+            <p>
+              <a href="#">Become an Affiliate</a>
+            </p>
+            <p>
+              <a href="#">Shipping Rates</a>
+            </p>
+            <p>
+              <a href="#">Help</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" />
+            <p><i class="fas fa-home mr-3"></i> H# 09. Street # 28 , E 16/3, Islamabad.</p>
+            <p><i class="fas fa-envelope mr-3"></i> emminentent@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> +92 300 5339495</p>
+            <p><i class="fas fa-print mr-3"></i> +92 344 2362325</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © All Rights Reserved 2021:
+      <a class="text-white" href="#">Eminent Enterpirses</a>
+    </div>
+  </footer>
+</body>
+
+</html>
